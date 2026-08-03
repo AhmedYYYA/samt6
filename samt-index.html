@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سَمْت — من الإمكانات إلى القيادة</title>
+<meta name="description" content="سَمْت — زمالة قيادية انتقائية تُعِدّ ذوي الإمكانات العالية لتولّي مسؤوليات قيادية واستراتيجية وتحويلية أوسع.">
+<meta name="theme-color" content="#05070C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --hibr:#05070C;        /* حِبْر */
+  --layl:#0A0F19;        /* ليل */
+  --layl-2:#0E1523;
+  --naht:#C8A46A;        /* نحاس */
+  --naht-fatih:#E7D2AC;
+  --ufuq:#48678A;        /* أفق */
+  --daw:#EFEAE1;         /* ضوء */
+  --daw-dim:rgba(239,234,225,.62);
+  --daw-faint:rgba(239,234,225,.38);
+  --hairline:rgba(200,164,106,.16);
+  --hairline-soft:rgba(239,234,225,.09);
+
+  --rail:132px;
+  --gutter:clamp(24px,6vw,110px);
+  --maxw:1240px;
+
+  --f-display:'Readex Pro',system-ui,sans-serif;
+  --f-body:'IBM Plex Sans Arabic',system-ui,sans-serif;
+  --f-classic:'Amiri',serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--hibr);
+  color:var(--daw);
+  font-family:var(--f-body);
+  font-weight:300;
+  line-height:1.9;
+  overflow-x:hidden;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--naht);color:var(--hibr)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:1px solid var(--naht);outline-offset:4px}
+
+/* ── الحبيبات ── */
+.grain{
+  position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.28;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.vignette{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 90% at 70% 0%,transparent 40%,rgba(0,0,0,.55) 100%);
+}
+
+/* ══════ آلة السَّمْت — الشريط الجانبي ══════ */
+.instrument{
+  position:fixed;top:0;left:0;bottom:0;width:var(--rail);z-index:40;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-left:1px solid var(--hairline);
+  background:linear-gradient(180deg,rgba(10,15,25,.4),rgba(5,7,12,.75));
+  backdrop-filter:blur(6px);
+}
+.inst-ring{width:84px;height:84px;display:block}
+.ring-base{fill:none;stroke:rgba(200,164,106,.22);stroke-width:1}
+.ring-prog{fill:none;stroke:var(--naht);stroke-width:1.4;stroke-linecap:round;
+  transform:rotate(-90deg);transform-origin:50% 50%;}
+.tick{stroke:rgba(239,234,225,.22);stroke-width:1}
+.tick.card{stroke:rgba(200,164,106,.55);stroke-width:1.2}
+.needle{fill:var(--naht)}
+.needle-tail{fill:rgba(239,234,225,.25)}
+.hub{fill:var(--naht-fatih)}
+
+.inst-read{
+  margin-top:18px;font-family:var(--f-display);font-weight:300;font-size:20px;
+  letter-spacing:.14em;color:var(--naht-fatih);font-variant-numeric:tabular-nums;
+  direction:ltr;
+}
+.inst-label{
+  margin-top:6px;font-size:10.5px;font-weight:400;letter-spacing:.18em;
+  color:var(--daw-faint);text-align:center;max-width:104px;line-height:1.7;
+  transition:opacity .4s;
+}
+.inst-scale{
+  position:absolute;top:0;bottom:0;left:calc(var(--rail) - 1px);width:1px;
+  background:linear-gradient(180deg,transparent,var(--hairline) 12%,var(--hairline) 88%,transparent);
+}
+.inst-fill{
+  position:absolute;top:0;left:calc(var(--rail) - 1.5px);width:2px;height:0;
+  background:linear-gradient(180deg,var(--naht),rgba(200,164,106,.15));
+}
+.inst-notch{position:absolute;left:calc(var(--rail) - 9px);width:9px;height:1px;background:rgba(200,164,106,.35)}
+.inst-notch.on{background:var(--naht-fatih);width:15px;left:calc(var(--rail) - 15px)}
+
+/* ══════ التخطيط ══════ */
+.page{margin-right:0;margin-left:var(--rail);}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+section{position:relative;padding-block:clamp(96px,13vh,168px)}
+.chapter-head{display:flex;align-items:baseline;gap:22px;margin-bottom:clamp(40px,6vh,72px);
+  padding-bottom:22px;border-bottom:1px solid var(--hairline-soft)}
+.ch-num{font-family:var(--f-display);font-size:12px;font-weight:400;letter-spacing:.3em;color:var(--naht)}
+.ch-name{font-size:12.5px;font-weight:400;letter-spacing:.22em;color:var(--daw-faint)}
+.ch-bearing{margin-inline-start:auto;font-family:var(--f-display);font-size:12px;
+  letter-spacing:.18em;color:rgba(200,164,106,.5);direction:ltr;font-variant-numeric:tabular-nums}
+
+h2.title{
+  font-family:var(--f-display);font-weight:200;
+  font-size:clamp(34px,5.4vw,68px);line-height:1.28;letter-spacing:-.01em;
+  max-width:19ch;
+}
+h2.title em{font-style:normal;font-weight:400;color:var(--naht)}
+.lede{margin-top:28px;max-width:56ch;font-size:clamp(15px,1.35vw,17.5px);color:var(--daw-dim);line-height:2.05}
+.body-col{max-width:60ch;margin-top:34px}
+.body-col p{font-size:15.5px;color:var(--daw-dim);line-height:2.15;margin-bottom:20px}
+.body-col p:last-child{margin-bottom:0}
+
+/* ══════ الغلاف ══════ */
+.hero{min-height:100svh;display:flex;align-items:center;padding-block:120px;position:relative}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(64% 52% at 78% 42%,rgba(200,164,106,.10),transparent 62%);
+}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.26em;
+  color:var(--naht);margin-bottom:34px}
+.hero-eyebrow::after{content:"";height:1px;width:clamp(40px,8vw,120px);background:var(--hairline)}
+.hero h1{
+  font-family:var(--f-display);font-weight:200;
+  font-size:clamp(46px,9.2vw,124px);line-height:1.1;letter-spacing:-.02em;
+}
+.hero h1 em{font-style:normal;font-weight:400;color:var(--naht)}
+.hero-sub{margin-top:34px;max-width:52ch;font-size:clamp(15px,1.4vw,18px);color:var(--daw-dim);line-height:2.1}
+.hero-meta{margin-top:52px;display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--hairline-soft);
+  max-width:720px}
+.hero-meta div{flex:1 1 140px;padding:20px 0 0;border-inline-start:1px solid var(--hairline-soft);
+  padding-inline-start:20px}
+.hero-meta div:first-child{border-inline-start:0;padding-inline-start:0}
+.hero-meta .v{font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--naht-fatih)}
+.hero-meta .k{font-size:11.5px;letter-spacing:.14em;color:var(--daw-faint);margin-top:4px}
+.scrollcue{margin-top:64px;display:flex;align-items:center;gap:12px;font-size:11px;
+  letter-spacing:.22em;color:var(--daw-faint)}
+.scrollcue i{display:block;width:1px;height:34px;background:linear-gradient(180deg,var(--naht),transparent);
+  animation:drop 2.4s ease-in-out infinite}
+@keyframes drop{0%,100%{opacity:.25;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ══════ الاسم ══════ */
+.name-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,86px);align-items:start}
+.glyph{
+  font-family:var(--f-classic);font-weight:700;
+  font-size:clamp(96px,17vw,220px);line-height:1;color:var(--naht);
+  border-bottom:1px solid var(--hairline);padding-bottom:28px;
+}
+.glyph-meta{margin-top:20px;font-size:12px;letter-spacing:.2em;color:var(--daw-faint)}
+.pullquote{
+  margin-top:clamp(48px,7vh,88px);padding:36px 0;
+  border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  font-family:var(--f-display);font-weight:200;font-size:clamp(20px,2.9vw,34px);
+  line-height:1.65;color:var(--naht-fatih);max-width:24ch;
+}
+
+/* ══════ الرحلة — الأقواس ══════ */
+.arcs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline-soft);
+  border:1px solid var(--hairline-soft)}
+.arc{background:var(--hibr);padding:34px 30px 38px;position:relative;transition:background .5s}
+.arc:hover{background:var(--layl-2)}
+.arc .deg{font-family:var(--f-display);font-size:13px;letter-spacing:.16em;color:var(--naht);
+  direction:ltr;font-variant-numeric:tabular-nums}
+.arc h3{margin-top:20px;font-family:var(--f-display);font-weight:300;font-size:clamp(20px,2.1vw,26px);
+  line-height:1.4}
+.arc p{margin-top:14px;font-size:14px;color:var(--daw-dim);line-height:2}
+.arc::after{content:"";position:absolute;top:0;right:0;width:0;height:1px;background:var(--naht);
+  transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.arc:hover::after{width:100%}
+
+/* ══════ البوابات ══════ */
+.gates{margin-top:8px}
+.gate{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(20px,4vw,52px);align-items:baseline;
+  padding:30px 0;border-bottom:1px solid var(--hairline-soft);
+}
+.gate:first-child{border-top:1px solid var(--hairline-soft)}
+.gate .g-n{font-family:var(--f-display);font-size:13px;letter-spacing:.2em;color:var(--naht);
+  direction:ltr;min-width:34px}
+.gate h3{font-family:var(--f-display);font-weight:300;font-size:clamp(19px,2vw,24px);margin-bottom:10px}
+.gate p{font-size:14.5px;color:var(--daw-dim);line-height:2;max-width:62ch}
+.gate .g-w{font-family:var(--f-display);font-size:clamp(20px,2.4vw,30px);font-weight:200;
+  color:var(--naht-fatih);white-space:nowrap}
+.gate .g-w small{font-size:11px;letter-spacing:.14em;color:var(--daw-faint);display:block;
+  font-family:var(--f-body);margin-top:4px}
+
+/* ══════ المحطات ══════ */
+.stations{display:grid;gap:1px;background:var(--hairline-soft);border:1px solid var(--hairline-soft)}
+.station{background:var(--hibr);padding:clamp(28px,3.6vw,44px);display:grid;
+  grid-template-columns:120px 1fr 1fr;gap:clamp(20px,3.4vw,48px);align-items:start;transition:background .5s}
+.station:hover{background:var(--layl-2)}
+.st-idx{font-family:var(--f-display);font-size:12px;letter-spacing:.18em;color:var(--naht);direction:ltr}
+.st-idx span{display:block;margin-top:10px;color:var(--daw-faint);letter-spacing:.1em;font-size:10.5px}
+.station h3{font-family:var(--f-display);font-weight:300;font-size:clamp(22px,2.5vw,32px);line-height:1.35}
+.station .focus{margin-top:10px;font-size:12.5px;letter-spacing:.12em;color:var(--naht)}
+.station p{font-size:14.5px;color:var(--daw-dim);line-height:2.05}
+.entities{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.entities span{font-size:11.5px;letter-spacing:.08em;color:var(--daw-faint);
+  border:1px solid var(--hairline);padding:5px 11px;border-radius:1px}
+
+/* ══════ الكفاءات ══════ */
+.dims{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline-soft);
+  border:1px solid var(--hairline-soft)}
+.dim{background:var(--hibr);padding:clamp(28px,3.2vw,40px);display:grid;grid-template-columns:auto 1fr;
+  gap:26px;align-items:start;transition:background .5s}
+.dim:hover{background:var(--layl-2)}
+.dim .d-n{font-family:var(--f-display);font-size:12px;color:var(--naht);letter-spacing:.16em;direction:ltr;
+  padding-top:6px}
+.dim h3{font-family:var(--f-display);font-weight:300;font-size:clamp(18px,1.9vw,23px);margin-bottom:12px}
+.dim p{font-size:14px;color:var(--daw-dim);line-height:2}
+
+/* ══════ الأدلة ══════ */
+.evidence{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hairline-soft);
+  border:1px solid var(--hairline-soft)}
+.ev{background:var(--hibr);padding:32px 24px 36px;transition:background .5s}
+.ev:hover{background:var(--layl-2)}
+.ev .e-n{font-family:var(--f-display);font-size:11.5px;letter-spacing:.2em;color:var(--naht);direction:ltr}
+.ev h3{margin-top:18px;font-family:var(--f-display);font-weight:300;font-size:19px}
+.ev p{margin-top:12px;font-size:13.5px;color:var(--daw-dim);line-height:1.95}
+
+/* ══════ الأثر ══════ */
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);margin-top:8px}
+.imp{border-top:1px solid var(--hairline);padding-top:24px}
+.imp .v{font-family:var(--f-display);font-weight:200;font-size:clamp(38px,5vw,64px);
+  line-height:1;color:var(--naht-fatih)}
+.imp h3{margin-top:16px;font-size:14.5px;font-weight:500;color:var(--daw)}
+.imp p{margin-top:10px;font-size:13.5px;color:var(--daw-dim);line-height:1.95}
+
+/* ══════ القبول ══════ */
+.admit{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,90px);align-items:start}
+.criteria{border-top:1px solid var(--hairline-soft)}
+.criteria li{list-style:none;display:flex;gap:20px;padding:18px 0;
+  border-bottom:1px solid var(--hairline-soft);font-size:14.5px;color:var(--daw-dim)}
+.criteria li b{font-weight:500;color:var(--daw);min-width:96px;font-size:14px}
+.cta{margin-top:44px;display:inline-flex;align-items:center;gap:16px;
+  padding:17px 34px;border:1px solid var(--naht);color:var(--naht-fatih);
+  font-size:13.5px;letter-spacing:.14em;transition:.45s cubic-bezier(.2,.7,.2,1);position:relative;overflow:hidden}
+.cta span{position:relative;z-index:1;transition:color .45s}
+.cta::before{content:"";position:absolute;inset:0;background:var(--naht);
+  transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cta:hover::before{transform:scaleX(1)}
+.cta:hover span{color:var(--hibr)}
+
+/* ══════ الخاتمة ══════ */
+.closing{text-align:center;padding-block:clamp(120px,20vh,220px);position:relative}
+.closing::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(50% 60% at 50% 50%,rgba(200,164,106,.09),transparent 70%)}
+.closing .mark{font-family:var(--f-classic);font-weight:700;font-size:clamp(56px,10vw,120px);
+  color:var(--naht);line-height:1}
+.closing h2{margin-top:28px;font-family:var(--f-display);font-weight:200;
+  font-size:clamp(26px,4.4vw,54px);line-height:1.4}
+.closing h2 em{font-style:normal;font-weight:400;color:var(--naht)}
+.closing .bearing{margin-top:38px;font-family:var(--f-display);font-size:13px;letter-spacing:.35em;
+  color:rgba(200,164,106,.6);direction:ltr}
+
+footer{border-top:1px solid var(--hairline-soft);padding-block:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-size:11.5px;letter-spacing:.1em;color:var(--daw-faint)}
+
+/* ══════ الحركة ══════ */
+.rv{opacity:0;clip-path:inset(0 0 100% 0)}
+
+/* ══════ الاستجابة ══════ */
+@media(max-width:1080px){
+  .arcs{grid-template-columns:repeat(2,1fr)}
+  .evidence{grid-template-columns:repeat(2,1fr)}
+  .impact{grid-template-columns:repeat(2,1fr)}
+  .station{grid-template-columns:90px 1fr;grid-template-areas:"idx head" "idx body"}
+  .st-idx{grid-area:idx}
+}
+@media(max-width:820px){
+  :root{--rail:0px}
+  .instrument{
+    top:auto;bottom:0;left:0;right:0;width:100%;height:62px;flex-direction:row;gap:16px;
+    border-left:0;border-top:1px solid var(--hairline);justify-content:flex-start;
+    padding-inline:20px;background:rgba(5,7,12,.9)
+  }
+  .inst-ring{width:38px;height:38px}
+  .inst-read{margin-top:0;font-size:15px}
+  .inst-label{margin-top:0;max-width:none;font-size:10px;letter-spacing:.14em}
+  .inst-scale,.inst-fill,.inst-notch{display:none}
+  .page{margin-left:0;padding-bottom:62px}
+  .name-grid,.admit{grid-template-columns:1fr}
+  .arcs,.dims{grid-template-columns:1fr}
+  .evidence,.impact{grid-template-columns:1fr}
+  .gate{grid-template-columns:auto 1fr;gap:18px}
+  .gate .g-w{grid-column:2;margin-top:8px}
+  .station{grid-template-columns:1fr;gap:18px}
+  .hero-meta div{flex:1 1 45%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rv{opacity:1;clip-path:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<!-- ══════ آلة السَّمْت ══════ -->
+<aside class="instrument" aria-hidden="true">
+  <div class="inst-scale"></div>
+  <div class="inst-fill" id="instFill"></div>
+  <svg class="inst-ring" viewBox="0 0 100 100" id="instRing">
+    <circle class="ring-base" cx="50" cy="50" r="42"/>
+    <circle class="ring-prog" id="ringProg" cx="50" cy="50" r="42"
+            stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+    <g id="ticks"></g>
+    <g id="needleGrp" style="transform-origin:50px 50px">
+      <polygon class="needle" points="50,10 53.2,48 50,45.6 46.8,48"/>
+      <polygon class="needle-tail" points="50,90 52.2,52 50,54.4 47.8,52"/>
+    </g>
+    <circle class="hub" cx="50" cy="50" r="2.6"/>
+  </svg>
+  <div class="inst-read" id="instRead">000°</div>
+  <div class="inst-label" id="instLabel">الإمكانات</div>
+</aside>
+
+<main class="page">
+
+<!-- ══════ الغلاف ══════ -->
+<section class="hero" data-bearing="0" data-label="الإمكانات">
+  <div class="wrap">
+    <div class="hero-eyebrow rv">زمالة قيادية انتقائية</div>
+    <h1 class="rv">مِن الإمكانات<br>إلى <em>القيادة.</em></h1>
+    <p class="hero-sub rv">سَمْت مسارٌ تطبيقيٌّ متصل يُعِدّ عشرة من ذوي الإمكانات العالية لتولّي مسؤوليات قيادية واستراتيجية وتحويلية أوسع. ليس دورةً تدريبية إضافية، إنما رحلة اختيارٍ وتكوينٍ وقياسِ أثر تبدأ من التقديم ولا تنتهي بالتخرّج.</p>
+
+    <div class="hero-meta rv">
+      <div><div class="v">١٠</div><div class="k">زملاء الدفعة</div></div>
+      <div><div class="v">١٦</div><div class="k">أسبوعًا صافيًا</div></div>
+      <div><div class="v">٤</div><div class="k">محطات إعداد</div></div>
+      <div><div class="v">١</div><div class="k">معيار قيادة</div></div>
+    </div>
+
+    <div class="scrollcue rv"><i></i><span>اضبط سَمْتك</span></div>
+  </div>
+</section>
+
+<!-- ══════ ٠١ الاسم ══════ -->
+<section data-bearing="40" data-label="الاسم">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠١</span>
+      <span class="ch-name">الاسم</span>
+      <span class="ch-bearing">040°</span>
+    </div>
+
+    <div class="name-grid">
+      <div class="rv">
+        <div class="glyph">سَمْت</div>
+        <div class="glyph-meta">اسم — عربية فصحى</div>
+      </div>
+      <div class="rv">
+        <h2 class="title">قبل البرنامج، <em>كلمة.</em></h2>
+        <div class="body-col">
+          <p>السَّمْت: الاتجاه الدقيق للمسار؛ الوجهة التي يُمسِك بها السائر نحو غايته. وفي الاستعمال الفصيح يوصف به هيئة الإنسان ووقاره، أي الطريقة التي يحمل بها القائد نفسه.</p>
+          <p>ومن جمعه «السُّموت» أخذت لغات العالم كلمة Azimuth، وهي الزاوية التي يضبط بها الملّاحون والفلكيون والطيّارون مسارهم. كلمةٌ وُلدت في العربية توجّه اليوم كل بوصلة على الأرض.</p>
+          <p>لا يوسّع البرنامج الإمكانات في كل اتجاه، إنما يضبط اتجاهًا واحدًا دقيقًا: القيادة. وكل ما يلي هو ذلك السَّمْت، مَحفوظًا.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pullquote rv">كل قائدٍ يبدأ باتجاه، وكل اتجاهٍ يبدأ بمعنى.</div>
+  </div>
+</section>
+
+<!-- ══════ ٠٢ البرنامج ══════ -->
+<section data-bearing="80" data-label="البرنامج">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٢</span>
+      <span class="ch-name">البرنامج</span>
+      <span class="ch-bearing">080°</span>
+    </div>
+
+    <h2 class="title rv">الاختيار يُكتسَب. <em>القيادة تُصنَع.</em></h2>
+
+    <div class="name-grid" style="margin-top:44px">
+      <div class="body-col rv" style="margin-top:0">
+        <p><b style="color:var(--naht);font-weight:500">القصد.</b> تأهيل قاعدة قيادية منتقاة من كوادر الوزارة تمتلك الكفاءة القيادية والوعي المؤسسي والعملياتي، والقدرة على الإدارة الاستراتيجية للقدرات والموارد وصناعة القرار. يحوّل سَمْت الخبرة المؤسسية المكتسبة إلى جاهزية عملياتية عالية، وقيادةٍ أكثر فاعلية، وأثرٍ مؤسسي مستدام.</p>
+      </div>
+      <div class="body-col rv" style="margin-top:0">
+        <p><b style="color:var(--naht);font-weight:500">الحاجة المؤسسية.</b> لا تكمن الفجوة في نقص البرامج التدريبية، إنما في غياب مسارٍ تكاملي منظّم يربط رصد الإمكانات القيادية بالتقييم الموضوعي، والتعرّض لبيئات قيادية متنوعة، والتطبيق على تحديات واقعية، وصولًا إلى قياس انتقال السلوك إلى الأداء الفعلي. يعالج سَمْت هذه الفجوة بمسارٍ موحّد قابل للتدقيق.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٣ الرحلة ══════ -->
+<section data-bearing="120" data-label="الرحلة">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٣</span>
+      <span class="ch-name">الرحلة</span>
+      <span class="ch-bearing">120°</span>
+    </div>
+
+    <h2 class="title rv">ستة أسماتٍ، <em>دائرةٌ واحدة.</em></h2>
+    <p class="lede rv">كل مرحلة ترفع معيار الحُكم والخُلُق والتعرّض والمسؤولية، حتى تعود الإبرة إلى الشمال الحقيقي — النقطة نفسها، وقائدٌ مختلف.</p>
+
+    <div class="arcs" style="margin-top:52px">
+      <div class="arc rv"><div class="deg">000°</div><h3>الإمكانات</h3><p>تُرصد الإمكانات الاستثنائية: دليل الخُلُق والقدرة قبل أي لقب.</p></div>
+      <div class="arc rv"><div class="deg">060°</div><h3>الاختيار</h3><p>مسار قبولٍ صارم وانتقائي. قليلون يدخلون، وكل دخولٍ مُسنَدٌ بالدليل.</p></div>
+      <div class="arc rv"><div class="deg">120°</div><h3>التكوين</h3><p>تُبنى القدرة الأساسية والحُكم القيادي تحت انضباطٍ مؤسسي متصل.</p></div>
+      <div class="arc rv"><div class="deg">180°</div><h3>التعرّض</h3><p>بيئاتٌ وطنية ودولية توسّع المنظور عند أبعد نقطةٍ عن الوطن.</p></div>
+      <div class="arc rv"><div class="deg">240°</div><h3>التحوّل</h3><p>تُقاس جاهزية القيادة وتُعزَّز وتظهر في القرار تحت الضغط.</p></div>
+      <div class="arc rv"><div class="deg">300°</div><h3>جاهزية القيادة</h3><p>مُهيَّأ للقيادة. جاهزٌ للإمرة. المعيار مُستوفًى ومُثبَتٌ باستقلال.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٤ الاختيار ══════ -->
+<section data-bearing="160" data-label="الاختيار">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٤</span>
+      <span class="ch-name">الاختيار</span>
+      <span class="ch-bearing">160°</span>
+    </div>
+
+    <h2 class="title rv">امتيازٌ قيادي، <em>لا مقعدُ تدريب.</em></h2>
+    <p class="lede rv">تقديمٌ مباشر ومفتوح على مستوى الوزارة، من دون ترشيحٍ مباشر ولا حصصٍ قطاعية ثابتة. أربع مراحل تُجتاز بالترتيب، ولا يُعفى من أيٍّ منها.</p>
+
+    <div class="gates" style="margin-top:52px">
+      <div class="gate rv">
+        <div class="g-n">01</div>
+        <div><h3>فحص الأهلية</h3><p>تحقّقٌ من الشروط والوثائق والتفرّغ واللغة والسفر. السجلّ يتكلّم قبل المرشّح.</p></div>
+        <div class="g-w">—<small>نجاح / عدم نجاح</small></div>
+      </div>
+      <div class="gate rv">
+        <div class="g-n">02</div>
+        <div><h3>تقييم الطلب</h3><p>الدافع والإنجاز والتفكير الاستراتيجي والتعلّم والأثر المتوقّع، يُقيَّم بلجنةٍ لا يرى فيها المقيِّم درجة غيره قبل تثبيت درجته.</p></div>
+        <div class="g-w">٢٥٪<small>من الوزن الكلي</small></div>
+      </div>
+      <div class="gate rv">
+        <div class="g-n">03</div>
+        <div><h3>دراسة حالة قيادية</h3><p>تحليل موقفٍ معقّد، وقرار، وموازنة مخاطر، وإحاطة تُتبَع بأسئلة. يُضاف مقيِّمٌ رابع إذا تجاوز فرق الدرجات خمس عشرة نقطة.</p></div>
+        <div class="g-w">٤٠٪<small>من الوزن الكلي</small></div>
+      </div>
+      <div class="gate rv">
+        <div class="g-n">04</div>
+        <div><h3>المقابلة الشخصية</h3><p>أسئلةٌ موحّدة وأمثلة سلوكية واختبارٌ للقيم والإمكانات. لا صوتَ منفردٌ يَقبل؛ المؤسسة هي التي تَقبل.</p></div>
+        <div class="g-w">٣٥٪<small>من الوزن الكلي</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٥ المحطات ══════ -->
+<section data-bearing="200" data-label="المحطات">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٥</span>
+      <span class="ch-name">محطات الإعداد</span>
+      <span class="ch-bearing">200°</span>
+    </div>
+
+    <h2 class="title rv">مسارٌ واحد، أربع دول، <em>ستة عشر أسبوعًا.</em></h2>
+    <p class="lede rv">ستة عشر أسبوعًا تدريبيًا صافيًا بتفرّغٍ كامل ومتصل. لا تُحتسب أيام السفر والانتقال ضمنها.</p>
+
+    <div class="stations" style="margin-top:52px">
+      <div class="station rv">
+        <div class="st-idx">W 01–03<span>24.45°N — 54.38°E · أبوظبي</span></div>
+        <div>
+          <h3>الإمارات العربية المتحدة</h3>
+          <div class="focus">القدرة الوطنية والابتكار الدفاعي</div>
+        </div>
+        <div>
+          <p>تجربةٌ وطنية متكاملة تمنح الزميل إلمامًا بدورة تطوير القدرات كاملةً: من تعريف المتطلّب والتخطيط والاستحواذ، مرورًا بالبحث والتطوير والتصنيع، وصولًا إلى التشغيل والدعم الفني والجاهزية المستدامة.</p>
+          <div class="entities"><span>مجلس توازن</span><span>مجموعة إيدج</span><span>GAL</span><span>معهد الابتكار التقني</span></div>
+        </div>
+      </div>
+
+      <div class="station rv">
+        <div class="st-idx">W 04–09<span>51.51°N — 0.13°W · لندن</span></div>
+        <div>
+          <h3>المملكة المتحدة</h3>
+          <div class="focus">القيادة بالقيم وتوجيه القدرات</div>
+        </div>
+        <div>
+          <p>مسارٌ متصل ينتقل بالزميل من القيادة بالقيم والسلوك تحت الضغط، إلى توجيه القدرات وتخطيطها وتسليمها واستدامتها، ثم إلى القيادة الفنية والجاهزية الهندسية والعمل المتكامل مع الصناعة.</p>
+          <div class="entities"><span>ساندهيرست</span><span>أكاديمية الدفاع — كرانفيلد</span><span>RAF Cosford</span></div>
+        </div>
+      </div>
+
+      <div class="station rv">
+        <div class="st-idx">W 10–12<span>48.86°N — 2.35°E · باريس</span></div>
+        <div>
+          <h3>الجمهورية الفرنسية</h3>
+          <div class="focus">التوسّع الصناعي الأوروبي</div>
+        </div>
+        <div>
+          <p>إقامة تعلّمٍ تطبيقية داخل منظومة EDGE Europe: نموذج التشغيل والحوكمة، وبناء الحضور الصناعي في أوروبا، والمسار من الهندسة إلى التصنيع والتكامل، وإدارة الشراكات ونقل المعرفة والامتثال.</p>
+          <div class="entities"><span>EDGE Europe — باريس</span><span>بوردو — الهندسة والتصنيع</span></div>
+        </div>
+      </div>
+
+      <div class="station rv">
+        <div class="st-idx">W 13–16<span>38.90°N — 77.04°W · واشنطن</span></div>
+        <div>
+          <h3>الولايات المتحدة الأمريكية</h3>
+          <div class="focus">التعاون الحكومي وإدارة الاستحواذ</div>
+        </div>
+        <div>
+          <p>حزمة تعليمٍ دفاعي تنفيذي تربط الاستراتيجية الوطنية بالسياسة والتخطيط والمؤسسات، وتغطّي التعاون الأمني ومسار المبيعات العسكرية الخارجية، وإدارة الاستحواذ وتكلفة دورة الحياة والاستدامة.</p>
+          <div class="entities"><span>DSCA / DSCU</span><span>كليات الحرب</span><span>Naval Postgraduate School</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="lede rv" style="font-size:12.5px;margin-top:26px;color:var(--daw-faint)">الجهات والزيارات والبرامج المقترحة خاضعة للتنسيق والاعتمادات الرسمية.</p>
+  </div>
+</section>
+
+<!-- ══════ ٠٦ الكفاءات ══════ -->
+<section data-bearing="240" data-label="الكفاءات">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٦</span>
+      <span class="ch-name">نضج القيادة</span>
+      <span class="ch-bearing">240°</span>
+    </div>
+
+    <h2 class="title rv">مبنيٌّ للقيادة. <em>مؤتمنٌ على القرار.</em></h2>
+
+    <div class="dims" style="margin-top:52px">
+      <div class="dim rv"><div class="d-n">01</div><div><h3>البصيرة الاستراتيجية</h3><p>يقرأ السياق والأثر والاتجاه المؤسسي بعيد المدى، ويحفظ السَّمْت حين ينحرف غيره.</p></div></div>
+      <div class="dim rv"><div class="d-n">02</div><div><h3>التفكير المنظومي</h3><p>يدرك الترابط بين الإنسان والقدرة والمهمة؛ لا قرارَ يحرّك شيئًا واحدًا فقط.</p></div></div>
+      <div class="dim rv"><div class="d-n">03</div><div><h3>القرار في التعقيد</h3><p>يوازن المهمة والمخاطر والوقت والمعلومات الناقصة، ويقرّر حين تظلّ الصورة غير مكتملة.</p></div></div>
+      <div class="dim rv"><div class="d-n">04</div><div><h3>القيادة المؤسسية</h3><p>يواءم بين الاستراتيجية والناس والحوكمة نحو أثرٍ يبقى بعد رحيل القائد.</p></div></div>
+      <div class="dim rv"><div class="d-n">05</div><div><h3>الابتكار والتحوّل</h3><p>يحوّل الإمكانات الناشئة إلى تغييرٍ مؤسسي قابل للتنفيذ، من موقع المنتِج لا المستهلِك.</p></div></div>
+      <div class="dim rv"><div class="d-n">06</div><div><h3>الانخراط الدولي</h3><p>يبني الثقة والمنظور والشراكات عبر الثقافات؛ سَمْت الإمارات مفهومًا في الخارج.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٧ التقييم ══════ -->
+<section data-bearing="280" data-label="التقييم">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٧</span>
+      <span class="ch-name">التقييم والحوكمة</span>
+      <span class="ch-bearing">280°</span>
+    </div>
+
+    <h2 class="title rv">لا تقدّمَ بغير دليل. <em>لا تنفيذَ بغير حوكمة.</em></h2>
+    <p class="lede rv">يُقاس التطوّر باستمرار ويُحكَم بصلاحيةٍ واضحة وأدلةٍ مستقلة ونقاط قرارٍ منضبطة. لا شيء يُفترَض، وكل شيء يُوثَّق.</p>
+
+    <div class="evidence" style="margin-top:52px">
+      <div class="ev rv"><div class="e-n">01</div><h3>خط الأساس</h3><p>ملفّ قدرةٍ قبل البرنامج — سَمْت الزميل عند الانطلاق، مقيسًا قبل الأسبوع الأول.</p></div>
+      <div class="ev rv"><div class="e-n">02</div><h3>الدليل اليومي</h3><p>المهام والسلوك والتأمّل، تُلتقط يوميًا على امتداد الأسابيع الستة عشر.</p></div>
+      <div class="ev rv"><div class="e-n">03</div><h3>تقييم المضيف</h3><p>ملاحظاتٌ مستقلة من كل جهةٍ مستضيفة — أربع دول، ومعيارٌ واحد.</p></div>
+      <div class="ev rv"><div class="e-n">04</div><h3>تحدّي النضج</h3><p>تمرين قرارٍ وإحاطةٌ تنفيذية تحت الضغط أمام لجنةٍ عليا.</p></div>
+      <div class="ev rv"><div class="e-n">05</div><h3>مشروع الأثر</h3><p>نتيجةٌ مؤسسية لها متابعة — قيمة البرنامج، مُسلَّمةً ومملوكة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٨ الأثر ══════ -->
+<section data-bearing="320" data-label="الأثر">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٨</span>
+      <span class="ch-name">الأثر المؤسسي</span>
+      <span class="ch-bearing">320°</span>
+    </div>
+
+    <h2 class="title rv">قيادةٌ أقوى. <em>مؤسساتٌ أقوى.</em></h2>
+    <p class="lede rv">يُقاس سَمْت بما يتغيّر بعد العودة: حُكمٌ أفضل، وشبكاتٌ أمتن، وتحوّلٌ قابل للتنفيذ، وقيمةٌ مؤسسية مستدامة.</p>
+
+    <div class="impact" style="margin-top:52px">
+      <div class="imp rv"><div class="v">٦</div><h3>نموّ قيادي قابل للقياس</h3><p>دليل تقدّمٍ عبر الكفاءات الست، من خط الأساس إلى الاعتماد النهائي.</p></div>
+      <div class="imp rv"><div class="v">٤</div><h3>شبكات استراتيجية</h3><p>علاقاتٌ وطنية ودولية تُبنى بقصدٍ عبر أربع بيئات مستضيفة.</p></div>
+      <div class="imp rv"><div class="v">٣</div><h3>مشروعات تحوّل</h3><p>تحدّياتٌ مؤسسية ذات أولوية تتحوّل إلى خطط تسليمٍ مملوكة ومحكومة.</p></div>
+      <div class="imp rv"><div class="v">١٢</div><h3>شهرًا من المتابعة</h3><p>مراجعاتٌ بعد ستة أشهر واثني عشر شهرًا لتمييز التعلّم عن الأثر.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ٠٩ القبول ══════ -->
+<section data-bearing="360" data-label="القبول">
+  <div class="wrap">
+    <div class="chapter-head rv">
+      <span class="ch-num">٠٩</span>
+      <span class="ch-name">القبول</span>
+      <span class="ch-bearing">360°</span>
+    </div>
+
+    <div class="admit">
+      <div class="rv">
+        <h2 class="title">اختِيرَ لإمكاناته. <em>صِيغَ للقيادة.</em></h2>
+        <div class="body-col">
+          <p>المشاركة على مستوى الوزارة عبر تقديمٍ مباشر وعملية اختيارٍ مركزية. ليست تسجيلًا مفتوحًا؛ الدائرة لا تُغلَق إلا لمن أتمّها.</p>
+          <p>الحد الأدنى للنجاح الكلي سبعون من مئة، ولا تقلّ أي مرحلة مُقيَّمة عن ستين. تُوثَّق الدرجات والأسباب وتعارضات المصالح، ويُختار عشرة زملاء وثلاثة احتياط وفق الجدارة والإمكانات القيادية.</p>
+        </div>
+        <a class="cta" href="#"><span>فتح استمارة الترشيح</span><span>←</span></a>
+      </div>
+
+      <ul class="criteria rv">
+        <li><b>الخبرة</b><span>خمس سنوات خبرة مهنية على الأقل</span></li>
+        <li><b>الأداء</b><span>مستوى الأداء المقبول أو أعلى في آخر دورتين</span></li>
+        <li><b>السلوك</b><span>تقريرٌ سرّي لا يقلّ عن جيد جدًا لآخر سنتين</span></li>
+        <li><b>التفرّغ</b><span>ستة عشر أسبوعًا كاملة، والسفر خارجها</span></li>
+        <li><b>اللغة</b><span>ALCPT ٩٠٪ أو IELTS ٦٫٥ أو ما يعادلهما</span></li>
+        <li><b>الجاهزية</b><span>صلاحية الجواز والتأشيرات والموافقات الأمنية</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ الخاتمة ══════ -->
+<section class="closing" data-bearing="360" data-label="الشمال الحقيقي">
+  <div class="wrap">
+    <div class="mark rv">سَمْت</div>
+    <h2 class="rv">قليلون يُختارون. <em>وأقلّ منهم من يَقود.</em></h2>
+    <div class="bearing rv">000° — 360°</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© ٢٠٢٦ سَمْت — جميع الحقوق محفوظة</span>
+    <span>وثيقة مفاهيمية · الترتيبات المقترحة خاضعة للاعتماد الرسمي</span>
+  </div>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── بناء التدريجات على الحلقة ── */
+  const ticks = document.getElementById('ticks');
+  let tickHTML = '';
+  for(let i=0;i<72;i++){
+    const a = (i*5) * Math.PI/180;
+    const cardinal = i%18===0;
+    const long = cardinal ? 8 : (i%9===0 ? 5 : 3);
+    const r1 = 42, r2 = 42 - long;
+    const x1 = 50 + r1*Math.sin(a), y1 = 50 - r1*Math.cos(a);
+    const x2 = 50 + r2*Math.sin(a), y2 = 50 - r2*Math.cos(a);
+    tickHTML += `<line class="tick${cardinal?' card':''}" x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}"/>`;
+  }
+  ticks.innerHTML = tickHTML;
+
+  const readEl  = document.getElementById('instRead');
+  const labelEl = document.getElementById('instLabel');
+  const needle  = document.getElementById('needleGrp');
+  const ringP   = document.getElementById('ringProg');
+  const fillEl  = document.getElementById('instFill');
+  const CIRC    = 263.9;
+
+  /* ── علامات الفصول على المسطرة ── */
+  const sections = [...document.querySelectorAll('section[data-bearing]')];
+  const rail = document.querySelector('.instrument');
+  const notches = [];
+  sections.forEach(()=>{
+    const n = document.createElement('div');
+    n.className = 'inst-notch';
+    rail.appendChild(n);
+    notches.push(n);
+  });
+  function placeNotches(){
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    if(docH <= 0) return;
+    sections.forEach((s,i)=>{
+      const p = Math.min(1, Math.max(0, s.offsetTop / docH));
+      notches[i].style.top = (p*100) + 'vh';
+    });
+  }
+
+  /* ── تحديث الآلة ── */
+  let raf = null;
+  function update(){
+    raf = null;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const p = docH > 0 ? Math.min(1, Math.max(0, window.scrollY / docH)) : 0;
+    const deg = p * 360;
+
+    needle.style.transform = 'rotate(' + deg + 'deg)';
+    ringP.style.strokeDashoffset = (CIRC * (1 - p)).toFixed(2);
+    fillEl.style.height = (p * 100) + 'vh';
+    readEl.textContent = String(Math.round(deg)).padStart(3,'0') + '°';
+
+    notches.forEach((n,i)=>{
+      const st = sections[i].offsetTop;
+      n.classList.toggle('on', window.scrollY + window.innerHeight*0.5 >= st);
+    });
+  }
+  function onScroll(){ if(!raf) raf = requestAnimationFrame(update); }
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', ()=>{ placeNotches(); update(); });
+
+  /* ── تسمية الفصل الحالي ── */
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const t = e.target.dataset.label;
+        if(labelEl.textContent !== t){
+          labelEl.style.opacity = 0;
+          setTimeout(()=>{ labelEl.textContent = t; labelEl.style.opacity = 1; }, 220);
+        }
+      }
+    });
+  }, {rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(s=>obs.observe(s));
+
+  /* ── الكشف بالتمرير ── */
+  if(window.gsap && window.ScrollTrigger && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('section:not(.hero)').forEach(sec=>{
+      const items = sec.querySelectorAll('.rv');
+      if(!items.length) return;
+      gsap.to(items, {
+        opacity:1,
+        clipPath:'inset(0 0 0% 0)',
+        duration:1.05,
+        ease:'power3.out',
+        stagger:0.07,
+        scrollTrigger:{ trigger:sec, start:'top 78%', once:true }
+      });
+    });
+
+    /* ── تتابع فتح الصفحة ── */
+    const tl = gsap.timeline({delay:.15});
+    tl.from('.instrument', {opacity:0, x:-24, duration:.9, ease:'power2.out'})
+      .from('#needleGrp', {rotation:-120, transformOrigin:'50px 50px', duration:1.5, ease:'power4.out'}, '-=.7')
+      .to('.hero .rv', {opacity:1, clipPath:'inset(0 0 0% 0)', duration:1.1, ease:'power3.out', stagger:.11}, '-=1.1');
+  } else {
+    document.querySelectorAll('.rv').forEach(el=>{ el.style.opacity=1; el.style.clipPath='none'; });
+  }
+
+  placeNotches();
+  update();
+  window.addEventListener('load', ()=>{ placeNotches(); update(); });
+})();
+</script>
+</body>
+</html>
