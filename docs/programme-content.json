@@ -1,0 +1,1094 @@
+{
+  "version": "1.0",
+  "reviewed": "2026-09-25",
+  "nav": [
+    [
+      "home",
+      {
+        "ar": "المبادرة",
+        "en": "The initiative"
+      }
+    ],
+    [
+      "programme",
+      {
+        "ar": "رحلة الإعداد",
+        "en": "The programme"
+      }
+    ],
+    [
+      "proposal",
+      {
+        "ar": "ملف الاعتماد",
+        "en": "Approval case"
+      }
+    ],
+    [
+      "demo",
+      {
+        "ar": "التجربة التفاعلية",
+        "en": "Explore the platform"
+      }
+    ]
+  ],
+  "domains": [
+    {
+      "id": "strategy",
+      "name": {
+        "ar": "التقدير الاستراتيجي",
+        "en": "Strategic judgement"
+      },
+      "weight": 20,
+      "description": {
+        "ar": "قراءة التحولات الجيوسياسية وربط الخيارات بالأولويات الوطنية والمؤسسية.",
+        "en": "Interpret geopolitical change and connect choices to national and institutional priorities."
+      },
+      "evidence": {
+        "ar": "موجز خيارات يوضح الافتراضات والمخاطر وآثار القرار.",
+        "en": "An options brief stating assumptions, risks and decision consequences."
+      }
+    },
+    {
+      "id": "systems",
+      "name": {
+        "ar": "الفهم المؤسسي والمنظومي",
+        "en": "Institutional and systems understanding"
+      },
+      "weight": 15,
+      "description": {
+        "ar": "فهم الترابط بين العمليات والأفراد والقدرات والموارد والحوكمة.",
+        "en": "Understand the connections between operations, people, capabilities, resources and governance."
+      },
+      "evidence": {
+        "ar": "خريطة منظومة تتبع انتقال الاحتياج إلى أثر في الجاهزية.",
+        "en": "An ecosystem map tracing a requirement to a readiness outcome."
+      }
+    },
+    {
+      "id": "people",
+      "name": {
+        "ar": "قيادة الأفراد ونقل الخبرة",
+        "en": "People leadership and knowledge transfer"
+      },
+      "weight": 15,
+      "description": {
+        "ar": "بناء الثقة وقيادة فرق متنوعة والتعلّم من خبرات الأجيال السابقة.",
+        "en": "Build trust, lead diverse teams and learn from the experience of earlier generations."
+      },
+      "evidence": {
+        "ar": "ملاحظات سلوكية متعددة المصادر وخطة تطوير فردية.",
+        "en": "Multi-source behavioural observations and an individual development plan."
+      }
+    },
+    {
+      "id": "capability",
+      "name": {
+        "ar": "القدرات والاستحواذ والموارد",
+        "en": "Capabilities, acquisition and resources"
+      },
+      "weight": 15,
+      "description": {
+        "ar": "الموازنة بين الحاجة والتكلفة ودورة الحياة والتكامل والاستدامة.",
+        "en": "Balance requirements, cost, life cycle, integration and sustainment."
+      },
+      "evidence": {
+        "ar": "حالة قرار تقارن بدائل القدرة وتكلفتها الكلية.",
+        "en": "A decision case comparing capability options and whole-life cost."
+      }
+    },
+    {
+      "id": "technology",
+      "name": {
+        "ar": "التقنية والابتكار المسؤول",
+        "en": "Technology and responsible innovation"
+      },
+      "weight": 10,
+      "description": {
+        "ar": "تقييم قيمة التقنيات الناشئة وحدودها ومتطلبات البيانات والتكامل.",
+        "en": "Evaluate emerging technology value, limitations, data needs and integration."
+      },
+      "evidence": {
+        "ar": "ورقة تجربة تربط المشكلة والفرضية ومعايير النجاح.",
+        "en": "An experiment brief connecting the problem, hypothesis and success criteria."
+      }
+    },
+    {
+      "id": "governance",
+      "name": {
+        "ar": "الحوكمة والسياسات والأخلاقيات",
+        "en": "Governance, policy and ethics"
+      },
+      "weight": 10,
+      "description": {
+        "ar": "تمييز الصلاحيات والالتزامات والمخاطر وتوثيق القرارات بنزاهة.",
+        "en": "Distinguish authorities, obligations and risks, and record decisions with integrity."
+      },
+      "evidence": {
+        "ar": "مذكرة تبين صاحب الصلاحية والضوابط وتعارض المصالح.",
+        "en": "A memorandum identifying authority, controls and conflicts of interest."
+      }
+    },
+    {
+      "id": "partnerships",
+      "name": {
+        "ar": "الشراكات والتواصل الدولي",
+        "en": "Partnerships and international engagement"
+      },
+      "weight": 10,
+      "description": {
+        "ar": "التواصل عبر الثقافات وفهم التعاون الحكومي والصناعي.",
+        "en": "Communicate across cultures and understand government and industrial cooperation."
+      },
+      "evidence": {
+        "ar": "موجز تفاوض وخريطة مصالح الشركاء.",
+        "en": "A negotiation brief and stakeholder-interest map."
+      }
+    },
+    {
+      "id": "delivery",
+      "name": {
+        "ar": "التنفيذ وقياس الأثر",
+        "en": "Delivery and impact measurement"
+      },
+      "weight": 5,
+      "description": {
+        "ar": "تحويل التعلّم إلى تحسين قابل للتنفيذ والقياس داخل المؤسسة.",
+        "en": "Turn learning into an implementable, measurable institutional improvement."
+      },
+      "evidence": {
+        "ar": "مشروع أثر بمالك تنفيذي وخط أساس ومراجعات متابعة.",
+        "en": "An impact project with an executive owner, baseline and follow-up reviews."
+      }
+    }
+  ],
+  "stations": [
+    {
+      "id": "uae",
+      "code": "AE",
+      "country": {
+        "ar": "الإمارات",
+        "en": "United Arab Emirates"
+      },
+      "weeks": 3,
+      "start": 1,
+      "end": 3,
+      "city": {
+        "ar": "المنظومة الوطنية",
+        "en": "National ecosystem"
+      },
+      "title": {
+        "ar": "افهم المنظومة التي ستقودها.",
+        "en": "Understand the institution you will lead."
+      },
+      "description": {
+        "ar": "تأسيس فهم مشترك لوزارة الدفاع ومنظومة تطوير القدرات، وربط الأولويات بالأفراد والموارد والصناعة والجاهزية.",
+        "en": "Build a shared understanding of MOD and the capability ecosystem, connecting priorities to people, resources, industry and readiness."
+      },
+      "hosts": [
+        {
+          "ar": "مجلس التوازن",
+          "en": "Tawazun Council"
+        },
+        {
+          "ar": "مجموعة EDGE",
+          "en": "EDGE Group"
+        },
+        {
+          "ar": "GAL",
+          "en": "GAL"
+        },
+        {
+          "ar": "معهد الابتكار التكنولوجي TII",
+          "en": "Technology Innovation Institute (TII)"
+        }
+      ],
+      "output": {
+        "ar": "خريطة المنظومة، خط أساس للجدارات، وتحدٍ مؤسسي معتمد للدراسة.",
+        "en": "Ecosystem map, competency baseline and an institutional challenge approved for study."
+      },
+      "note": {
+        "ar": "تتضمن المحطة لقاءات مع وظائف الوزارة ذات الصلة، وفق التنسيق الرسمي.",
+        "en": "Includes engagement with relevant MOD functions, subject to formal coordination."
+      }
+    },
+    {
+      "id": "uk",
+      "code": "UK",
+      "country": {
+        "ar": "المملكة المتحدة",
+        "en": "United Kingdom"
+      },
+      "weeks": 6,
+      "start": 4,
+      "end": 9,
+      "city": {
+        "ar": "ساندهيرست • كوسفورد",
+        "en": "Sandhurst • Cosford"
+      },
+      "title": {
+        "ar": "حوّل الفهم إلى ممارسة قيادية.",
+        "en": "Turn understanding into leadership practice."
+      },
+      "description": {
+        "ar": "قيادة الفرق، التقدير تحت الضغط، الانضباط المهني، وبناء القدرات الفنية وربطها بالجاهزية.",
+        "en": "Team leadership, judgement under pressure, professional discipline and the relationship between technical capability and readiness."
+      },
+      "hosts": [
+        {
+          "ar": "الأكاديمية العسكرية الملكية ساندهيرست",
+          "en": "Royal Military Academy Sandhurst"
+        },
+        {
+          "ar": "RAF Cosford",
+          "en": "RAF Cosford"
+        },
+        {
+          "ar": "أكاديمية الدفاع وجامعة كرانفيلد",
+          "en": "Defence Academy and Cranfield University"
+        },
+        {
+          "ar": "برامج ومؤسسات وزارة الدفاع البريطانية ذات الصلة",
+          "en": "Relevant UK MOD programmes and institutions"
+        }
+      ],
+      "output": {
+        "ar": "سجل ملاحظات قيادية، تمرين قرار، ومراجعة جاهزية منظومة.",
+        "en": "Leadership observation record, decision exercise and system-readiness review."
+      },
+      "note": {
+        "ar": "مسار مخصص مقترح للعسكريين والمدنيين؛ لا يمثل قبولاً في دورة التأهيل العسكري النظامية أو وعداً بمؤهل عسكري.",
+        "en": "A proposed tailored pathway for military and civilian personnel; it does not represent admission to a standard commissioning course or a military qualification."
+      }
+    },
+    {
+      "id": "fr",
+      "code": "FR",
+      "country": {
+        "ar": "فرنسا",
+        "en": "France"
+      },
+      "weeks": 3,
+      "start": 10,
+      "end": 12,
+      "city": {
+        "ar": "باريس • بوردو",
+        "en": "Paris • Bordeaux"
+      },
+      "title": {
+        "ar": "اربط الاستراتيجية بالصناعة.",
+        "en": "Connect strategy with industry."
+      },
+      "description": {
+        "ar": "الشراكات والاستثمار والهندسة والتكامل ونقل المعرفة، مع فهم العلاقة بين السياسات والقرارات الصناعية ودورة الاستحواذ.",
+        "en": "Partnerships, investment, engineering, integration and knowledge transfer, connecting policy to industrial decisions and acquisition."
+      },
+      "hosts": [
+        {
+          "ar": "EDGE Europe — باريس",
+          "en": "EDGE Europe — Paris"
+        },
+        {
+          "ar": "مسار الهندسة والتكامل في بوردو",
+          "en": "Engineering and integration track in Bordeaux"
+        }
+      ],
+      "output": {
+        "ar": "حالة شراكة أو استحواذ تتضمن التكامل والمخاطر ونقل المعرفة.",
+        "en": "A partnership or acquisition case covering integration, risk and knowledge transfer."
+      },
+      "note": {
+        "ar": "تبقى EDGE Europe محور المحطة. يحدد نطاق الوصول إلى المواقع والأنشطة بالتنسيق مع الجهة المضيفة.",
+        "en": "EDGE Europe remains the station anchor. Site and activity access must be agreed with the host."
+      }
+    },
+    {
+      "id": "us",
+      "code": "US",
+      "country": {
+        "ar": "الولايات المتحدة",
+        "en": "United States"
+      },
+      "weeks": 4,
+      "start": 13,
+      "end": 16,
+      "city": {
+        "ar": "التعاون الحكومي • الاستحواذ",
+        "en": "Government cooperation • Acquisition"
+      },
+      "title": {
+        "ar": "اختبر القرار. أثبت أثره.",
+        "en": "Test the decision. Demonstrate its value."
+      },
+      "description": {
+        "ar": "التعاون الحكومي وبرنامج FMS وإدارة الاستحواذ والبرامج والقيادة الاستراتيجية، وصولاً إلى عرض مشروع الأثر أمام لجنة تقييم.",
+        "en": "Government cooperation, FMS, acquisition, programme management and strategic leadership, culminating in an assessed impact-project briefing."
+      },
+      "hosts": [
+        {
+          "ar": "DSCA وDSCU",
+          "en": "DSCA and DSCU"
+        },
+        {
+          "ar": "Naval Postgraduate School — مسار إدارة الموارد الدفاعية",
+          "en": "Naval Postgraduate School — defence resource management track"
+        },
+        {
+          "ar": "مسار التعاون الحكومي والأمني وبرنامج FMS",
+          "en": "Government and security cooperation / FMS track"
+        },
+        {
+          "ar": "مسار الاستحواذ وإدارة البرامج والعقود",
+          "en": "Acquisition, programme management and contracts track"
+        },
+        {
+          "ar": "الكليات العسكرية وبرامج القيادة الاستراتيجية",
+          "en": "War colleges and strategic-leadership programmes"
+        },
+        {
+          "ar": "تطبيق عملي لدى جهة تنفيذية أو مكتب برنامج",
+          "en": "Practical attachment with an executive entity or programme office"
+        }
+      ],
+      "output": {
+        "ar": "موجز تنفيذي لمشروع الأثر وخطة تطبيق خلال 90 يوماً.",
+        "en": "Executive impact-project brief and a 90-day implementation plan."
+      },
+      "note": {
+        "ar": "الجهات الأمريكية والمسارات محددة كمقترحات وليست استضافات متفقاً عليها. تُنسّق المدد والأهلية والمواقع لتلائم المحطة ذات الأسابيع الأربعة.",
+        "en": "US institutions and tracks are proposed, not agreed hosting arrangements. Duration, eligibility and locations must be coordinated to fit the four-week station."
+      }
+    }
+  ],
+  "weeks": [
+    [
+      {
+        "ar": "الوزارة كمنظومة",
+        "en": "MOD as a system"
+      },
+      {
+        "ar": "ارسم علاقة الاستراتيجية والعمليات والموارد والحوكمة.",
+        "en": "Map the relationship between strategy, operations, resources and governance."
+      }
+    ],
+    [
+      {
+        "ar": "من الاحتياج إلى القدرة",
+        "en": "From need to capability"
+      },
+      {
+        "ar": "تتبّع احتياجاً افتراضياً عبر التخطيط والاستحواذ والدعم.",
+        "en": "Trace a fictional requirement through planning, acquisition and support."
+      }
+    ],
+    [
+      {
+        "ar": "الابتكار وخط الأساس",
+        "en": "Innovation and baseline"
+      },
+      {
+        "ar": "حدد تحدي الأثر وسجل خط الأساس وخطة التطوير.",
+        "en": "Define the impact challenge and record the baseline and development plan."
+      }
+    ],
+    [
+      {
+        "ar": "القيادة والخدمة",
+        "en": "Leadership and service"
+      },
+      {
+        "ar": "حلل مسؤولية القائد وسلوك الفريق في موقف مؤسسي.",
+        "en": "Analyse a leader’s responsibilities and team behaviour in an institutional situation."
+      }
+    ],
+    [
+      {
+        "ar": "الفرق والثقة",
+        "en": "Teams and trust"
+      },
+      {
+        "ar": "قد فريقاً متنوعاً واستقبل تغذية راجعة منظمة.",
+        "en": "Lead a diverse team and receive structured feedback."
+      }
+    ],
+    [
+      {
+        "ar": "الحكم تحت عدم اليقين",
+        "en": "Judgement under uncertainty"
+      },
+      {
+        "ar": "قدم خيارات واضحة مع معلومات ناقصة وافتراضات صريحة.",
+        "en": "Present clear options using incomplete information and explicit assumptions."
+      }
+    ],
+    [
+      {
+        "ar": "الجاهزية والقدرة الفنية",
+        "en": "Readiness and technical capability"
+      },
+      {
+        "ar": "اربط التأهيل الفني والسلامة والدعم بمتطلبات الجاهزية.",
+        "en": "Connect technical qualification, safety and support to readiness needs."
+      }
+    ],
+    [
+      {
+        "ar": "الموارد ودورة الحياة",
+        "en": "Resources and life cycle"
+      },
+      {
+        "ar": "قارن بدائل ضمن قيد موارد باستخدام تكلفة دورة الحياة.",
+        "en": "Compare alternatives within a resource constraint using life-cycle cost."
+      }
+    ],
+    [
+      {
+        "ar": "مراجعة منتصف المسار",
+        "en": "Midpoint review"
+      },
+      {
+        "ar": "راجع الأدلة وخطة التطوير وناقش التحدي مع المرشد.",
+        "en": "Review evidence and the development plan; discuss the challenge with the mentor."
+      }
+    ],
+    [
+      {
+        "ar": "الشراكات والاستراتيجية الصناعية",
+        "en": "Partnerships and industrial strategy"
+      },
+      {
+        "ar": "حدد مصالح الشركاء وشروط نجاح العلاقة المؤسسية.",
+        "en": "Identify partner interests and the conditions for a successful institutional relationship."
+      }
+    ],
+    [
+      {
+        "ar": "الهندسة والتكامل",
+        "en": "Engineering and integration"
+      },
+      {
+        "ar": "حلل واجهات المنظومات والاعتماد المتبادل ومخاطر التكامل.",
+        "en": "Analyse system interfaces, dependencies and integration risks."
+      }
+    ],
+    [
+      {
+        "ar": "نقل المعرفة والحوكمة",
+        "en": "Knowledge transfer and governance"
+      },
+      {
+        "ar": "قدم حالة شراكة تميز التعلم ونقل المعرفة عن شراء المنتج.",
+        "en": "Present a partnership case distinguishing learning and knowledge transfer from purchasing a product."
+      }
+    ],
+    [
+      {
+        "ar": "التعاون الحكومي وبرنامج FMS",
+        "en": "Government cooperation and FMS"
+      },
+      {
+        "ar": "تتبّع الأدوار والقرارات في حالة تعليمية للتعاون الحكومي.",
+        "en": "Trace roles and decisions in an educational government-cooperation case."
+      }
+    ],
+    [
+      {
+        "ar": "الاستحواذ وإدارة البرامج",
+        "en": "Acquisition and programme management"
+      },
+      {
+        "ar": "راجع المتطلبات والجدول والتكلفة والمخاطر والحوكمة.",
+        "en": "Review requirements, schedule, cost, risk and governance."
+      }
+    ],
+    [
+      {
+        "ar": "الجيوسياسة والسياسات والتقنية",
+        "en": "Geopolitics, policy and technology"
+      },
+      {
+        "ar": "اختبر أثر تغير خارجي في الخيارات المؤسسية والتقنية.",
+        "en": "Test how an external change affects institutional and technology choices."
+      }
+    ],
+    [
+      {
+        "ar": "مشروع الأثر والتقييم الختامي",
+        "en": "Impact project and final assessment"
+      },
+      {
+        "ar": "دافع عن مشروعك وخطة تطبيقه أمام لجنة، ووثق أهداف المتابعة.",
+        "en": "Defend the project and implementation plan before a panel and record follow-up objectives."
+      }
+    ]
+  ],
+  "sources": [
+    {
+      "id": "R1",
+      "title": {
+        "ar": "توصية القيادة والقدرة في الخدمة العامة",
+        "en": "Recommendation on Public Service Leadership and Capability"
+      },
+      "publisher": "OECD",
+      "url": "https://legalinstruments.oecd.org/public/doc/641/641.en.pdf",
+      "use": {
+        "ar": "مرجع لتطوير القيادة والتعلم والثقافة المؤسسية؛ ليس اعتماداً لبرنامج سمت.",
+        "en": "Reference for leadership development, learning and institutional culture; not SAMT accreditation."
+      }
+    },
+    {
+      "id": "R2",
+      "title": {
+        "ar": "تصميم التدريب القيادي وتنفيذه — تحليل تلوي",
+        "en": "Leadership training design, delivery, and implementation: A meta-analysis"
+      },
+      "publisher": "Lacerenza et al. · Journal of Applied Psychology · 2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28749153/",
+      "use": {
+        "ar": "يسند الجمع بين الممارسة والتغذية الراجعة وتقييم الاحتياجات. لا يثبت فعالية سمت قبل تجربته.",
+        "en": "Supports practice, feedback and needs assessment. It does not establish SAMT’s effectiveness before a pilot."
+      }
+    },
+    {
+      "id": "R3",
+      "title": {
+        "ar": "التدريب في ساندهيرست",
+        "en": "Officer training at RMA Sandhurst"
+      },
+      "publisher": "British Army",
+      "url": "https://www.army.mod.uk/support-and-training/our-schools-and-colleges/rma-sandhurst/officer-training/",
+      "use": {
+        "ar": "الاختصاص المؤسسي؛ المسار المخصص ومشاركة المدنيين يتطلبان اتفاقاً مستقلاً.",
+        "en": "Institutional remit; a tailored pathway and civilian participation require a separate agreement."
+      }
+    },
+    {
+      "id": "R4",
+      "title": {
+        "ar": "قاعدة RAF Cosford",
+        "en": "RAF Cosford"
+      },
+      "publisher": "Royal Air Force",
+      "url": "https://www.raf.mod.uk/our-organisation/stations/raf-cosford/",
+      "use": {
+        "ar": "دور القاعدة في التدريب الفني؛ لا يثبت توافر مقاعد لسمت.",
+        "en": "The station’s technical-training role; does not establish SAMT seat availability."
+      }
+    },
+    {
+      "id": "R5",
+      "title": {
+        "ar": "إطلاق EDGE Europe",
+        "en": "Launch of EDGE Europe"
+      },
+      "publisher": "EDGE · 11 June 2026",
+      "url": "https://edgegroup.ae/news/launch-edge-europe-edge-heralds-new-model-european-defence",
+      "use": {
+        "ar": "أساس علني لمساري باريس وبوردو؛ الاستضافة لم يتم الاتفاق عليها.",
+        "en": "Public basis for Paris and Bordeaux tracks; hosting has not been agreed."
+      }
+    },
+    {
+      "id": "R6",
+      "title": {
+        "ar": "دليل إدارة المساعدة الأمنية",
+        "en": "Security Assistance Management Manual"
+      },
+      "publisher": "DSCA",
+      "url": "https://samm.dsca.mil/listing/chapters",
+      "use": {
+        "ar": "مرجع تعليمي لأدوار وإجراءات التعاون الأمني وبرنامج FMS.",
+        "en": "Educational reference for security-cooperation and FMS roles and processes."
+      }
+    },
+    {
+      "id": "R7",
+      "title": {
+        "ar": "عن معهد الابتكار التكنولوجي",
+        "en": "About Technology Innovation Institute"
+      },
+      "publisher": "TII",
+      "url": "https://www.tii.ae/about-us",
+      "use": {
+        "ar": "السياق البحثي والتقني للمحطة الوطنية.",
+        "en": "Research and technology context for the national station."
+      }
+    },
+    {
+      "id": "R8",
+      "title": {
+        "ar": "خدمات الدعم والاستدامة",
+        "en": "Sustainment services"
+      },
+      "publisher": "GAL",
+      "url": "https://www.gal.ae/products-services",
+      "use": {
+        "ar": "سياق الدعم الفني والصيانة وإدامة القدرة.",
+        "en": "Context for technical support, maintenance and capability sustainment."
+      }
+    },
+    {
+      "id": "R9",
+      "title": {
+        "ar": "معنى السمت في المعجم الوسيط",
+        "en": "Meaning of samt in Al Muʿjam Al Wasit"
+      },
+      "publisher": "مجمع اللغة العربية بالقاهرة · Academy of the Arabic Language in Cairo",
+      "url": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/السمت",
+      "use": {
+        "ar": "المعنى المعجمي للطريق والهيئة؛ تطبيقه على القيادة تفسير لهوية المبادرة.",
+        "en": "Lexical meanings of path and bearing; the leadership application is the initiative’s interpretation."
+      }
+    },
+    {
+      "id": "R10",
+      "title": {
+        "ar": "مركز الإدارة والقيادة الدفاعية",
+        "en": "Centre for Defence Management and Leadership"
+      },
+      "publisher": "Cranfield University",
+      "url": "https://www.cranfield.ac.uk/centres/centre-for-defence-management-and-leadership",
+      "use": {
+        "ar": "مرجع لاختصاص التعليم القيادي والإداري الدفاعي، دون افتراض القبول أو المدة.",
+        "en": "Reference for defence leadership and management education, without assuming admission or duration."
+      }
+    },
+    {
+      "id": "R11",
+      "title": {
+        "ar": "جامعة التعاون الأمني الدفاعي",
+        "en": "Defense Security Cooperation University"
+      },
+      "publisher": "DSCU",
+      "url": "https://www.dscu.edu/",
+      "use": {
+        "ar": "اختصاص تعليم التعاون الأمني؛ يحتاج المسار المقترح إلى تنسيق رسمي.",
+        "en": "Security-cooperation education remit; the proposed pathway requires formal coordination."
+      }
+    },
+    {
+      "id": "R12",
+      "title": {
+        "ar": "تعليم الاستراتيجية وإدارة الموارد الدفاعية",
+        "en": "Strategy and defence resource management education"
+      },
+      "publisher": "Naval Postgraduate School · 2021",
+      "url": "https://nps.edu/-/annual-course-builds-strategy-resource-management-skills-for-us-int-l-leaders",
+      "use": {
+        "ar": "مثال تاريخي على التعليم للعسكريين والمدنيين؛ ليس دليلاً على إتاحة دورة حالية أو ملاءمة أهلية جميع المرشحين.",
+        "en": "Historical example of military and civilian education; not evidence of a currently available course or eligibility of all candidates."
+      }
+    }
+  ],
+  "proposal": [
+    {
+      "id": "decision",
+      "title": {
+        "ar": "القرار المطلوب",
+        "en": "Decision requested"
+      },
+      "paragraphs": [
+        {
+          "ar": "أقترح تبنّي مبادرة سَمْت من حيث المبدأ، وتكليف جهة راعية داخل وزارة الدفاع بتطوير تصميمها التنفيذي وإتمام دراسة الجدوى والتنسيق مع الجهات المضيفة، تمهيداً لاتخاذ قرار مستقل بشأن إطلاق دورة تجريبية.",
+          "en": "I propose that the Ministry of Defence endorse SAMT in principle and appoint an institutional sponsor to develop the delivery design, complete feasibility work and coordinate with proposed hosts, before a separate decision to launch a pilot."
+        },
+        {
+          "ar": "المبادرة مقدمة من أحمد يونس يوسف الحمادي. وهي مقترح يسعى إلى تبنّي الوزارة، ولا تمثل برنامجاً معتمداً أو شراكات قائمة. لا يترتب على الموافقة المبدئية التزام مالي أو إعلان فتح باب الترشيح الفعلي.",
+          "en": "The initiative is proposed by Ahmed Younis Yousif Alhammadi. It seeks MOD adoption and does not represent an approved programme or existing partnerships. In-principle endorsement would not itself create a financial commitment or open real nominations."
+        },
+        {
+          "ar": "تتضمن حزمة القرار التصميم المقترح، الحوكمة، الاختيار، رحلة التعلم، التقييم، متابعة الأثر، نموذج التكاليف وسجل المخاطر، إضافة إلى تجربة رقمية ببيانات افتراضية.",
+          "en": "The decision package includes proposed programme design, governance, selection, learning, assessment, impact follow-up, a cost model and a risk register, alongside a digital demonstration using fictional data."
+        }
+      ]
+    },
+    {
+      "id": "need",
+      "title": {
+        "ar": "الحاجة والقيمة المؤسسية",
+        "en": "Institutional need and value"
+      },
+      "paragraphs": [
+        {
+          "ar": "تعالج المبادرة فجوة يحددها صاحب المقترح بين الخبرة المتراكمة لدى الجيل القيادي القائم والموهبة الواعدة لدى الجيل التالي، بالتزامن مع تغير التقنية والصناعة والجيوسياسة والسياسات. ينبغي التحقق من حجم هذه الفجوة بمقابلات وبيانات تطوير الكوادر خلال مرحلة الجدوى.",
+          "en": "The initiative addresses a gap identified by its proposer between the accumulated experience of established leaders and the promise of the next generation, alongside technological, industrial, geopolitical and policy change. Its scale should be validated through interviews and workforce-development evidence during feasibility work."
+        },
+        {
+          "ar": "القيمة المقصودة هي إعداد عسكريين ومدنيين ذوي إمكانات استثنائية لفهم المنظومة المؤسسية واتخاذ قرارات أفضل والعمل عبر حدود الوظائف. يشمل ذلك الاستراتيجية والعمليات والموارد البشرية والقدرات والاستحواذ والمالية والصناعة والدعم والحوكمة.",
+          "en": "The intended value is to prepare exceptional military and civilian personnel to understand the institutional ecosystem, make better decisions and work across functions. This includes strategy, operations, people, capabilities, acquisition, finance, industry, support and governance."
+        },
+        {
+          "ar": "يُستفاد من مراجع OECD وأبحاث التدريب القيادي في تصميم الممارسة والتغذية الراجعة ونقل التعلم إلى العمل. هذه مبررات تصميمية وليست دليلاً على تحقق أثر سمت؛ إثبات ذلك يتطلب دورة تجريبية وقياساً لاحقاً. [R1، R2]",
+          "en": "OECD guidance and leadership-training research inform the use of practice, feedback and transfer to work. These are design rationales, not evidence that SAMT has delivered impact; that requires a pilot and follow-up measurement. [R1, R2]"
+        }
+      ]
+    },
+    {
+      "id": "charter",
+      "title": {
+        "ar": "ميثاق البرنامج وحدوده",
+        "en": "Programme charter and boundaries"
+      },
+      "paragraphs": [
+        {
+          "ar": "الفئة المستهدفة هي عسكريون ومدنيون من وزارة الدفاع حصراً، من المراحل المبكرة والمتوسطة مهنياً، ويكون التميز والإمكانات القيادية محور الاختيار. الحد الأقصى 20 مشاركاً في الدورة، ويحدد الحجم النهائي وفق قدرة الاستضافة والإشراف والتمويل.",
+          "en": "Participants are exclusively MOD military and civilian personnel at early and middle career stages, selected for exceptional ability and leadership potential. Each cycle is capped at 20; the final size depends on host capacity, supervision and funding."
+        },
+        {
+          "ar": "المدة الملزمة 16 أسبوعاً متتالياً بدوام كامل في الإمارات والمملكة المتحدة وفرنسا والولايات المتحدة. التوزيع المرجعي 3 و6 و3 و4 أسابيع على التوالي. تُدمج الانتقالات والمراجعات ضمن هذه المدة، وتحتاج ساعات الاتصال وأيام السفر إلى جدول تنفيذي معتمد.",
+          "en": "The fixed duration is 16 consecutive full-time weeks across the UAE, UK, France and US. The reference allocation is 3, 6, 3 and 4 weeks respectively. Transitions and reviews sit within this period; contact hours and travel days require an approved delivery schedule."
+        },
+        {
+          "ar": "تبقى الجهات والمسارات الموضحة في ملحق المحطات ثابتة في التصميم، مع إمكان إضافة جهات تخدم نواتج التعلم. كل استضافة أو تخصيص مقاعد أو استخدام موقع يتطلب اتفاقاً رسمياً. وتبقى متابعة 12 شهراً بعد العودة أساساً مقترحاً قابلاً للتفصيل.",
+          "en": "Hosts and tracks listed in the stations appendix remain design anchors, with additions allowed where they serve learning outcomes. Every hosting arrangement, seat allocation and site access requires formal agreement. Twelve months of follow-up remains the proposed baseline."
+        },
+        {
+          "ar": "لا تمنح المشاركة رتبة أو ترقية أو أهلية تلقائية لتولي القيادة. ولا تمنح المبادرة شهادة أكاديمية أو مهنية معتمدة ما لم يُبرم اتفاق صريح مع جهة مخولة.",
+          "en": "Participation does not confer rank, promotion or automatic eligibility for command. No accredited academic or professional award is claimed without an explicit agreement with an authorised awarding body."
+        }
+      ]
+    },
+    {
+      "id": "selection",
+      "title": {
+        "ar": "الترشيح والاختيار",
+        "en": "Nomination and selection"
+      },
+      "paragraphs": [
+        {
+          "ar": "تبدأ العملية بترشيح مؤسسي مدعوم بأدلة أداء واستعداد للتفرغ وخطاب يوضح الدافع. تراجع الأهلية أولاً، ثم تُجرى دراسة حالة وتمرين جماعي ومقابلة منظمة، وتنتهي بمراجعة لجنة متعددة التخصصات.",
+          "en": "The process begins with institutional nomination supported by performance evidence, full-time availability and a motivation statement. Eligibility is checked first, followed by a case exercise, group exercise and structured interview, then a multidisciplinary panel review."
+        },
+        {
+          "ar": "مقترح المفاضلة هو 30% للتحليل والتقدير، 25% للتعلم وفهم المنظومة، 20% لقيادة الفريق، 15% للدافع والوعي الذاتي، و10% للتواصل. السلوك المهني والنزاهة شرط مستقل. تُعاير المعايير خلال التجربة قبل اعتماد أي حد للنجاح.",
+          "en": "The proposed selection weighting is 30% analysis and judgement, 25% learning and systems understanding, 20% team leadership, 15% motivation and self-awareness, and 10% communication. Professional conduct and integrity are a separate condition. Criteria should be calibrated in the pilot before any pass threshold is adopted."
+        },
+        {
+          "ar": "يوثق مقيمان على الأقل الأدلة، وتراجع اللجنة الحالات المتباينة مع الإفصاح عن تعارض المصالح. تكون القرارات مسببة وقابلة للمراجعة، ويستخدم الفرز العددي لمساندة الحكم البشري. لا تُفترض حدود عمر أو رتبة أو سنوات خدمة غير مقررة من الوزارة.",
+          "en": "At least two assessors document evidence; the panel reviews divergent cases and declares conflicts of interest. Decisions are reasoned and reviewable, with numerical scoring supporting human judgement. No unapproved age, rank or service-length limits are assumed."
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "title": {
+        "ar": "التعلم التطبيقي ونقل الخبرة",
+        "en": "Applied learning and knowledge transfer"
+      },
+      "paragraphs": [
+        {
+          "ar": "يتبع الجميع نواة مشتركة لفهم منظومة الوزارة، مع تكليفات تتناسب مع الخبرة والوظيفة. يربط كل أسبوع بين سؤال مؤسسي، لقاء أو حالة تطبيقية، مخرج مكتوب، وتغذية راجعة. يدوّن المشارك ما تعلمه وكيف سيستخدمه وما يحتاج إلى التحقق منه.",
+          "en": "All fellows follow a shared core in MOD ecosystem understanding, with assignments adapted to experience and function. Each week connects an institutional question, a host engagement or applied case, a written output and feedback. Fellows record what they learned, how it may be used and what still needs validation."
+        },
+        {
+          "ar": "يُقرن كل مشارك بمرشد ذي خبرة، وتضم فرق العمل عسكريين ومدنيين وخبرات متفاوتة. تُستخدم جلسات خبرة منظمة، ومراجعات بعد النشاط، ومناقشات بين الأجيال لحفظ المعرفة الضمنية وإعادة اختبارها في سياق جديد.",
+          "en": "Each fellow is paired with an experienced mentor. Project teams mix military and civilian perspectives and experience levels. Structured experience discussions, after-action reviews and intergenerational dialogue preserve tacit knowledge and test its relevance in a new context."
+        },
+        {
+          "ar": "يبدأ مشروع الأثر في المحطة الوطنية وينمو عبر المحطات الأربع. تشمل أمثلته التعليمية تحسين تدفق القرار أو تبادل المعرفة أو كفاءة عملية دعم، ويختار مالك مؤسسي التحدي وخط الأساس ونطاق البيانات المسموح به.",
+          "en": "The impact project starts in the UAE and develops across all four stations. Educational examples include improving decision flow, knowledge exchange or a support process. An institutional owner approves the challenge, baseline and permitted data scope."
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": {
+        "ar": "التقييم والتخرج",
+        "en": "Assessment and completion"
+      },
+      "paragraphs": [
+        {
+          "ar": "يُقاس التقدم عبر ثمانية مجالات موضحة في إطار الجدارات. لكل مجال شواهد سلوكية ومخرجات، ويستخدم سلم من 1 إلى 5 من الفهم الأساسي إلى التطبيق المستقل والتفسير المقنع للبدائل. الأوزان المقترحة مجموعها 100% ولا تمثل معياراً معتمداً.",
+          "en": "Progress is assessed across eight competency domains. Each has behavioural evidence and outputs, using a 1–5 scale from basic understanding to independent application and reasoned explanation of alternatives. Proposed weights total 100% and are not an approved standard."
+        },
+        {
+          "ar": "يجمع التقييم خط الأساس، أدلة الأسبوع، ملاحظات المضيف والمرشد، مراجعة منتصف البرنامج، وتمرين القرار والعرض الختامي. الفرق بين قياسين على سلم ترتيبي وصف للتقدم، ولا يكفي وحده لإثبات انتقال الأثر إلى العمل.",
+          "en": "Assessment combines baseline, weekly evidence, host and mentor observations, midpoint review, a decision exercise and final briefing. A change on an ordinal rating scale describes progress; it does not alone prove transfer to work."
+        },
+        {
+          "ar": "توصي اللجنة بالتخرج عند اكتمال الأدلة الأساسية ومشروع الأثر وخطة التطبيق والسلوك المهني المطلوب. تُوثق الفجوات وخطة المعالجة عند الحاجة، ولا تستخدم الدرجة الإجمالية وحدها لتجاوز نقص جوهري.",
+          "en": "The panel recommends completion when essential evidence, the impact project, implementation plan and professional-conduct requirements are met. Gaps and remediation are documented when needed; an aggregate score cannot by itself override a material deficiency."
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "title": {
+        "ar": "الحوكمة والمسؤوليات",
+        "en": "Governance and responsibilities"
+      },
+      "paragraphs": [
+        {
+          "ar": "يُقترح راعٍ مؤسسي مخول يعتمد الاتجاه وقرارات البوابات، ولجنة توجيه تضم التطوير والموارد البشرية والعمليات والمالية والشؤون القانونية والتعاون الدولي. تدير وحدة البرنامج التنفيذ والسجل والمواعيد، وتملك لجنة تقييم مستقلة نسبياً قرارات الاختيار والتخرج.",
+          "en": "An authorised institutional sponsor would own direction and gate decisions, supported by a steering committee covering development, HR, operations, finance, legal affairs and international cooperation. A programme office would manage delivery, records and scheduling; a sufficiently independent assessment panel would own selection and completion decisions."
+        },
+        {
+          "ar": "يعين كل مشروع أثر مالك منفعة داخل جهة العمل. وتكون للمالية مسؤولية التحقق من التكلفة، وللجهة المخولة مسؤولية اعتماد الالتزام، وللمضيف مسؤولية اعتماد محتواه وتقييمه. تُحدد صلاحيات حماية المعلومات والاستضافة الرقمية وفق متطلبات الوزارة قبل أي تشغيل حقيقي.",
+          "en": "Each impact project has a benefits owner in the home organisation. Finance verifies cost; the authorised authority approves commitments; hosts approve their content and assessment. Information protection and digital-hosting responsibilities must be set under MOD requirements before real operation."
+        }
+      ]
+    },
+    {
+      "id": "gates",
+      "title": {
+        "ar": "بوابات الاعتماد والتنفيذ",
+        "en": "Approval and delivery gates"
+      },
+      "rows": [
+        [
+          {
+            "ar": "البوابة",
+            "en": "Gate"
+          },
+          {
+            "ar": "المسؤول المقترح",
+            "en": "Proposed owner"
+          },
+          {
+            "ar": "الدليل المطلوب",
+            "en": "Required evidence"
+          }
+        ],
+        [
+          {
+            "ar": "تبنّي المبدأ",
+            "en": "In-principle endorsement"
+          },
+          {
+            "ar": "الراعي المخول",
+            "en": "Authorised sponsor"
+          },
+          {
+            "ar": "قصد واضح ونطاق ثابت وتكليف فريق التصميم.",
+            "en": "Clear purpose, fixed scope and a commissioned design team."
+          }
+        ],
+        [
+          {
+            "ar": "الجدوى والتصميم",
+            "en": "Feasibility and design"
+          },
+          {
+            "ar": "لجنة التوجيه ووحدة البرنامج",
+            "en": "Steering committee and programme office"
+          },
+          {
+            "ar": "احتياج مثبت، نتائج تعلم، جدول 16 أسبوعاً، إمكان استضافة العسكريين والمدنيين.",
+            "en": "Validated need, learning outcomes, 16-week timetable and host feasibility for military and civilian personnel."
+          }
+        ],
+        [
+          {
+            "ar": "جاهزية الإطلاق",
+            "en": "Launch readiness"
+          },
+          {
+            "ar": "الراعي والمالية والجهات المختصة",
+            "en": "Sponsor, finance and relevant authorities"
+          },
+          {
+            "ar": "اتفاقات مضيفين، تكلفة موثقة وممولة، معايير اختيار، خطة سفر ومعلومات وتقييم.",
+            "en": "Host agreements, evidenced and funded cost, selection criteria, and travel, information and assessment plans."
+          }
+        ],
+        [
+          {
+            "ar": "تنفيذ التجربة",
+            "en": "Pilot delivery"
+          },
+          {
+            "ar": "مدير البرنامج والمضيفون",
+            "en": "Programme director and hosts"
+          },
+          {
+            "ar": "مراجعات أسبوعية، قرارات بوابات المحطات، معالجة حالات التعثر.",
+            "en": "Weekly reviews, station gate decisions and remediation for participants who need support."
+          }
+        ],
+        [
+          {
+            "ar": "التبني المستدام",
+            "en": "Sustained adoption"
+          },
+          {
+            "ar": "الراعي ومالكو المنافع",
+            "en": "Sponsor and benefits owners"
+          },
+          {
+            "ar": "نتائج تجربة ومراجعات 90 و180 و365 يوماً وقرار استمرار أو تعديل.",
+            "en": "Pilot results, 90-, 180- and 365-day reviews and a continue-or-adapt decision."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "impact",
+      "title": {
+        "ar": "متابعة الأثر بعد البرنامج",
+        "en": "Post-programme impact"
+      },
+      "paragraphs": [
+        {
+          "ar": "المتابعة المقترحة 12 شهراً وتشمل ثماني نقاط إرشاد في الأشهر 1 و2 و3 و4 و6 و8 و10 و12. توثق أهداف التطوير وتطبيق المشروع وتحديات العودة إلى العمل وملاحظات المدير المباشر.",
+          "en": "The proposed 12-month follow-up includes eight mentoring touchpoints in months 1, 2, 3, 4, 6, 8, 10 and 12. Records cover development objectives, project implementation, return-to-work challenges and line-manager feedback."
+        },
+        {
+          "ar": "تقاس جودة التنفيذ باكتمال الأدلة والتغذية الراجعة، ويقاس التعلم بمهام أداء قبل البرنامج وبعده، ويقاس الانتقال إلى العمل بأمثلة موثقة من المدير والمرشد، وتقاس المنفعة بنتيجة المشروع مقارنة بخط أساس متفق عليه.",
+          "en": "Delivery quality is measured through evidence and feedback completeness; learning through before-and-after performance tasks; transfer through documented manager and mentor examples; benefits through project outcomes against an agreed baseline."
+        },
+        {
+          "ar": "تُعرض المقامات وحجم العينة وحالات عدم الاستجابة. أهداف مثل تحسن الجاهزية أو تقليل زمن إجراء تحتاج إلى تعريف ومالك بيانات؛ لا تُعرض كوعود أو نتائج محققة. وعند الإمكان تستخدم مجموعة مقارنة مناسبة مع مراعاة اختلاف الوظائف.",
+          "en": "Report denominators, sample size and non-response. Readiness improvement or process-time reduction requires a definition and data owner; neither is presented as a promise or achieved result. Where practical, use a suitable comparison group while accounting for differences in roles."
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "title": {
+        "ar": "نموذج التكلفة والتمويل",
+        "en": "Cost and funding model"
+      },
+      "paragraphs": [
+        {
+          "ar": "تحسب تكلفة الدورة من نفقات تأسيس ثابتة ورسوم تدريب وسفر وإقامة ومعيشة وتأمين ودعم لكل مشارك، ثم احتياطي معتمد. تشمل التكلفة الاقتصادية وقت التفرغ والإحلال والفرصة البديلة حتى إن لم تكن دفعات إضافية.",
+          "en": "Cycle cost combines fixed setup, per-participant training, travel, accommodation, subsistence, insurance and support, plus an approved contingency. Economic cost also includes release time, cover and opportunity cost even where these are not additional payments."
+        },
+        {
+          "ar": "يعرض الموقع حاسبة تخطيط بمدخلات افتراضية قابلة للتعديل. افتراضها 91 يوماً خارج الدولة ضمن توزيع 3 و6 و3 و4 أسابيع. عدد ليالي الإقامة الفعلي وأيام السفر والرسوم والضرائب والتأمين تحدد بعروض وترتيبات موثقة. لا تمثل الأرقام تسعيراً من المضيفين أو طلب اعتماد ميزانية.",
+          "en": "The website provides a planning calculator with editable illustrative inputs. It assumes 91 days abroad within the 3/6/3/4-week allocation. Actual nights, travel days, fees, taxes and insurance require documented quotations and arrangements. Figures are neither host quotations nor a budget approval request."
+        },
+        {
+          "ar": "قبل قرار الإطلاق، تعرض المالية ثلاث حالات لحجم الدفعة حتى 20 مشاركاً، مع حساسية أسعار الصرف والإلغاء والتأخير ونطاق يشمل جميع البنود. يحدد السقف المالي بعد التحقق ولا يستنتج من بيانات العرض.",
+          "en": "Before launch, finance should present three cohort-size cases up to 20 participants, sensitivity to exchange rates, cancellation and delay, and a fully scoped cost estimate. The budget ceiling is set after verification, not inferred from demonstration data."
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "title": {
+        "ar": "المخاطر ومعالجتها",
+        "en": "Risks and treatment"
+      },
+      "rows": [
+        [
+          {
+            "ar": "الخطر",
+            "en": "Risk"
+          },
+          {
+            "ar": "المعالجة",
+            "en": "Treatment"
+          },
+          {
+            "ar": "المالك المقترح",
+            "en": "Proposed owner"
+          }
+        ],
+        [
+          {
+            "ar": "تعذر استضافة أو أهلية مدنية",
+            "en": "Host unavailability or civilian eligibility"
+          },
+          {
+            "ar": "اتفاق مكتوب بمسار مخصص؛ لا يُستبدل المضيف الثابت دون قرار صاحب المبادرة والوزارة.",
+            "en": "Written agreement for a tailored pathway; a fixed host is not replaced without proposer and MOD decision."
+          },
+          {
+            "ar": "التعاون الدولي",
+            "en": "International cooperation"
+          }
+        ],
+        [
+          {
+            "ar": "اضطراب السفر أو الجيوسياسة",
+            "en": "Travel or geopolitical disruption"
+          },
+          {
+            "ar": "مراجعة الجاهزية قبل الإطلاق وخطة استجابة تحافظ على القيود أو تعيد القرار للراعي.",
+            "en": "Pre-launch readiness review and response plan that respects constraints or returns the decision to the sponsor."
+          },
+          {
+            "ar": "مدير البرنامج",
+            "en": "Programme director"
+          }
+        ],
+        [
+          {
+            "ar": "تحيز الاختيار أو التقييم",
+            "en": "Selection or assessment bias"
+          },
+          {
+            "ar": "معايير سلوكية ومقيمان ومعايرة وتعارض مصالح ومراجعة قرار.",
+            "en": "Behavioural criteria, two assessors, calibration, conflict declarations and decision review."
+          },
+          {
+            "ar": "لجنة التقييم",
+            "en": "Assessment panel"
+          }
+        ],
+        [
+          {
+            "ar": "ضعف انتقال التعلم إلى العمل",
+            "en": "Weak transfer to work"
+          },
+          {
+            "ar": "مالك منفعة ووقت مخصص للتطبيق وإرشاد ومتابعة 12 شهراً.",
+            "en": "Benefits owner, protected application time, mentoring and 12-month follow-up."
+          },
+          {
+            "ar": "المدير المباشر",
+            "en": "Line manager"
+          }
+        ],
+        [
+          {
+            "ar": "عدم ضبط التكلفة",
+            "en": "Cost uncertainty"
+          },
+          {
+            "ar": "عروض موثقة ونطاق كامل واحتياطي ومراجعة تغيرات.",
+            "en": "Documented quotations, complete scope, contingency and change review."
+          },
+          {
+            "ar": "المالية",
+            "en": "Finance"
+          }
+        ],
+        [
+          {
+            "ar": "إدخال معلومات حقيقية في العرض",
+            "en": "Real information entered into the demo"
+          },
+          {
+            "ar": "بيانات افتراضية فقط؛ لا ربط بأنظمة الوزارة ولا استقبال وثائق أو معرفات فعلية.",
+            "en": "Fictional data only; no MOD-system connection or collection of real documents or identifiers."
+          },
+          {
+            "ar": "مالك المنصة",
+            "en": "Platform owner"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "digital",
+      "title": {
+        "ar": "المنظومة الرقمية وخارطة الانتقال",
+        "en": "Digital ecosystem and transition"
+      },
+      "paragraphs": [
+        {
+          "ar": "الإصدار الحالي عرض تفاعلي للترشيح والاختيار والتعلم والمتابعة والتقييم. جميع الملفات والأرقام والأسماء البديلة افتراضية. تحفظ تغييرات العرض في متصفح المستخدم فقط، ويمكن إعادة ضبطها؛ لا توجد حسابات فعلية أو رسائل أو إرسال إلى الوزارة.",
+          "en": "This release demonstrates nomination, selection, learning, monitoring and assessment. Records, figures and aliases are fictional. Demo changes are saved only in the user’s browser and can be reset; there are no real accounts, messages or submissions to MOD."
+        },
+        {
+          "ar": "قبل التشغيل الحقيقي يلزم اعتماد نموذج الأدوار والصلاحيات، والهوية المؤسسية، ومكان استضافة البيانات، والاحتفاظ والحذف، وسجل تدقيق على الخادم، وخطة الاستجابة والدعم، والتكاملات التي تختارها الوزارة. هذه متطلبات انتقال وليست قدرات أمنية متحققة في العرض.",
+          "en": "Real operation requires an approved role and permissions model, institutional identity, data hosting, retention and deletion, server-side audit, incident response and support, and integrations selected by MOD. These are transition requirements, not security capabilities established by this demonstration."
+        },
+        {
+          "ar": "تبدأ خارطة التنفيذ بتصميم تفصيلي وتحقق من المضيفين، ثم إعداد التجربة ومعايرة أدوات التقييم، ثم تنفيذ الدورة ذات الأسابيع الستة عشر، ثم متابعة الأثر ومراجعة التوسع. المواعيد الفعلية تُبنى على الموافقات والجاهزية ولا تُعلن كتاريخ إطلاق مؤكد.",
+          "en": "Delivery begins with detailed design and host validation, followed by pilot preparation and assessment calibration, the 16-week cycle, then impact follow-up and a scale decision. Actual dates depend on approvals and readiness; no confirmed launch date is claimed."
+        }
+      ]
+    }
+  ]
+}

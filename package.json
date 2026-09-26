@@ -1,0 +1,8 @@
+{
+  "name": "samt6",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arabic-first SAMT proposal and sample-data programme demonstrator",
+  "scripts": { "test": "node --test tests/core.test.cjs", "check": "node --check app.js && node --check data.js && node --check core.js" },
+  "engines": { "node": ">=20" }
+}
