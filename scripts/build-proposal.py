@@ -122,8 +122,10 @@ for lang in ['ar','en']:
     paragraph('تسند المراجع عناصر التصميم أو الاختصاص المعلن للجهات. ولا تثبت اعتماد المبادرة أو توافر الاستضافة. تاريخ مراجعة الروابط 25 سبتمبر 2026.' if ar else 'References support elements of the design or the stated institutional remit. They do not establish initiative approval or hosting availability. Links reviewed on 25 September 2026.',ar)
     for s in DATA['sources']:
         p=paragraph('['+s['id']+'] '+text(s['title'])+' — '+s['publisher'],ar);p.paragraph_format.keep_with_next=True
-        paragraph(text(s['use']),ar).paragraph_format.keep_with_next=True
+        p.paragraph_format.space_after=Pt(3)
+        p=paragraph(text(s['use']),ar);p.paragraph_format.keep_with_next=True;p.paragraph_format.space_after=Pt(3)
         p=doc.add_paragraph();hyperlink(p,s['url'],s['url']);fmt(p,False,8)
+        p.paragraph_format.space_after=Pt(5)
 
 foot=sec.footer.paragraphs[0];foot.alignment=WD_ALIGN_PARAGRAPH.CENTER
 r=foot.add_run('SAMT   |   ');r.font.size=Pt(8)
