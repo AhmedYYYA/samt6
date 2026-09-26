@@ -31,7 +31,7 @@
     if(!c||!stages.includes(target)||!transitions[c.stage].includes(target))throw new Error('invalid_transition');
     if(!reason||reason.trim().length<8)throw new Error('reason_required');
     if(['eligible','assessing','panel','selected','waitlist'].includes(target)&&!Object.values(c.eligibility).every(Boolean))throw new Error('eligibility_required');
-    if(target==='panel'&&!c.secondAssessor)throw new Error('second_assessor');
+    if(['panel','selected','waitlist'].includes(target)&&!c.secondAssessor)throw new Error('second_assessor');
     if(target==='selected'&&state.fellows.length>=state.capacity)throw new Error('capacity_full');
     weighted(c.scores);
     c.stage=target;c.notes.push({at:new Date().toISOString(),text:reason.trim()});

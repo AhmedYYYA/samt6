@@ -13,7 +13,11 @@ test('a nomination must progress through eligibility and a second assessor befor
   s.candidates.at(-1).eligibility.release=true;C.transition(s,id,'eligible','Eligibility reviewed');C.transition(s,id,'assessing','Assessment started');
   assert.throws(()=>C.transition(s,id,'selected','Strong evidence'),/invalid_transition/);
   assert.throws(()=>C.transition(s,id,'panel','Strong evidence'),/second_assessor/);
-  s.candidates.at(-1).secondAssessor=true;C.transition(s,id,'panel','Independent review completed');C.transition(s,id,'selected','Panel recommends admission');
+  s.candidates.at(-1).secondAssessor=true;C.transition(s,id,'panel','Independent review completed');
+  s.candidates.at(-1).secondAssessor=false;
+  assert.throws(()=>C.transition(s,id,'selected','Panel recommends admission'),/second_assessor/);
+  assert.throws(()=>C.transition(s,id,'waitlist','Panel recommends reserve'),/second_assessor/);
+  s.candidates.at(-1).secondAssessor=true;C.transition(s,id,'selected','Panel recommends admission');
   assert.ok(s.fellows.some(f=>f.id===id));assert.equal(C.validState(s),true);
 });
 test('capacity cannot exceed 20, undercut selected fellows, or admit beyond its limit',()=>{
